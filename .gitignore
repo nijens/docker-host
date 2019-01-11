@@ -1,0 +1,5 @@
+# Ignore virtual disks
+*.vmdk
+
+# Ignore local virtual machine configuration
+config.yaml
