@@ -8,7 +8,7 @@ configuration = {
     "cpus" => 2,
     "memory" => 3072,
     "ip" => "192.168.33.100",
-    "docker_storage_size" => 50, # Size in GB
+    "docker_storage_size" => 20, # Size in GB
     "volumes" => {}
 }
 
