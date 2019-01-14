@@ -42,10 +42,11 @@ The following configuration options are available to customize the virtual machi
 # ./config.yaml
 cpus:                2              # The number of CPUs attached to the virtual machine.
 memory:              3072           # The amount of RAM (in Megabytes) attached to the virtual machine.
-ip:                  192.168.33.100 # The IP address of the virtual machine. Please note that this is a private network
-                                    # not reachable from the network.
-docker_storage_size: 20             # The size (in Gigabytes) of the additional virtual disk added to the virtual machine.
-                                    # This virtual disk is used to store all the container images. (/var/lib/docker)
+ip:                  192.168.33.100 # The IP address of the virtual machine. Please note that this is a private
+                                    # network not reachable from the network.
+docker_storage_size: 20             # The size (in Gigabytes) of the additional virtual disk added to the virtual
+                                    # machine. This virtual disk is used to store all the container images.
+                                    # (/var/lib/docker)
 ```
 
 To apply the configuration changes, except for the `docker_storage_size`, run the following command:
