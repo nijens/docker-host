@@ -29,9 +29,6 @@ if virtualbox_docker_storage_virtual_disk_file[0..6] == "/mnt/c/"
         docker_storage_virtual_disk_file.length
     ]
 end
-if !File.exist?(docker_storage_virtual_disk_file)
-    print "Creating #{configuration["docker_storage_size"]}GB disk at #{docker_storage_virtual_disk_file}."
-end
 
 Vagrant.configure("2") do |config|
     # Load Debian 9 Vagrant box.
@@ -74,6 +71,7 @@ Vagrant.configure("2") do |config|
                 '--format', 'VMDK',
                 '--size', configuration["docker_storage_size"] * 1024
             ]
+
             vb.customize [
                 'storageattach', :id,
                 '--storagectl', 'SATA Controller',
