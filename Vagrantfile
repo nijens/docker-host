@@ -21,7 +21,7 @@ end
 # Location of the Docker storage virtual disk.
 docker_storage_virtual_disk_file = File.realpath(".").to_s+"/docker_storage.vmdk"
 virtualbox_docker_storage_virtual_disk_file = docker_storage_virtual_disk_file
-if virtualbox_docker_storage_virtual_disk_file[0..6] == "/mnt/c/"
+if virtualbox_docker_storage_virtual_disk_file[0..6] == "/mnt/c/" # TODO: Should only be used when within WSL. Also shouldn't be limited to C drive.
     virtualbox_docker_storage_virtual_disk_file = docker_storage_virtual_disk_file[5..5]
     virtualbox_docker_storage_virtual_disk_file += ":"
     virtualbox_docker_storage_virtual_disk_file += docker_storage_virtual_disk_file[
