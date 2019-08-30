@@ -9,7 +9,8 @@ configuration = {
     "memory" => 3072,
     "ip" => "192.168.33.100",
     "docker_storage_size" => 20, # Size in GB
-    "volumes" => {}
+    "volumes" => {},
+	"ports" => []
 }
 
 # Merge default configuration with configuration from config.yaml
@@ -57,6 +58,15 @@ Vagrant.configure("2") do |config|
         end
 
         config.vm.synced_folder(host_path, guest_path, volumeOptions)
+    end
+	
+    # Configure ports from config.yaml
+    configuration["ports"].each do |port|
+        if port.is_a? Integer
+            config.vm.network "forwarded_port", guest: port, host: port
+        else
+            config.vm.network "forwarded_port", guest: port["guest"], host: port["host"]
+        end
     end
 
     # Configure VM hardware.
