@@ -10,7 +10,7 @@ configuration = {
     "ip" => "192.168.33.100",
     "docker_storage_size" => 20, # Size in GB
     "volumes" => {},
-	"ports" => []
+    "ports" => []
 }
 
 # Merge default configuration with configuration from config.yaml
