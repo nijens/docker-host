@@ -93,3 +93,21 @@ volumes:
 For more information about the different mount configuration options, see the
 [Synced Folders](https://www.vagrantup.com/docs/synced-folders/basic_usage.html) chapter within
 the Vagrant documentation.
+
+### Forwarding ports
+If you want ports from your local machine (the host) forwarded to the vagrant box (the guest), you can specify this in the configuration file.
+
+Forward a port from your local machine to the same port on the virtualbox, in this example port 8080 is forwarded:
+```yaml
+# ./config.yaml
+ports:
+  - 8080
+```
+
+Forward a port from your local machine to a different port on the virtualbox, in this example port 8080 on the local machine is forwarded to 80 on the virtualbox:
+```yaml
+# ./config.yaml
+ports:
+  - host: 8080
+    guest: 80
+```
