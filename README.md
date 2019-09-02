@@ -95,7 +95,7 @@ For more information about the different mount configuration options, see the
 the Vagrant documentation.
 
 ### Forwarding ports
-If you want ports from your local machine (the host) forwarded to the vagrant box (the guest), you can specify this in te configuration file.
+If you want ports from your local machine (the host) forwarded to the vagrant box (the guest), you can specify this in the configuration file.
 
 Forward a port from your local machine to the same port on the virtualbox, in this example port 8080 is forwarded:
 ```yaml

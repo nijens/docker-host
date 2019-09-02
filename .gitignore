@@ -6,6 +6,3 @@ config.yaml
 
 # Ignore vagrant's metadata dir
 .vagrant
-
-# Ignore ide's metadata dir
-.idea
